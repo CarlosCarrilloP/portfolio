@@ -2,8 +2,13 @@
 import Angular from "./icons/Angular.astro"
 import Laravel from "./icons/Laravel.astro"
 import Tailwind from "./icons/Tailwind.astro"
+import Html from "./icons/Html.astro"
+import Boostrap from "./icons/Boostrap.astro"
+import Javascript from "./icons/Javascript.astro"
+import GitHub from "./icons/GitHub.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+
 
 const TAGS = {
  
@@ -22,6 +27,24 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
+
+  HTML: {
+    name: "HTML",
+    class: "bg-[#003159] text-white",
+    icon: Html,
+  },
+
+  BOOSTRAP: {
+    name: "CSS Boostrap",
+    class: "bg-[#003159] text-white",
+    icon: Boostrap,
+  },
+
+  JAVASCRIPT: {
+    name: "Javascript",
+    class: "bg-[#003159] text-white",
+    icon: Javascript,
+  },
 }
 const PROJECTS = [
   {
@@ -32,20 +55,30 @@ const PROJECTS = [
     image: "/projects/saccess.png",
     tags: [TAGS.ANGULAR, TAGS.LARAVEL, TAGS.TAILWIND],
   },
+
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "MARVEL",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [ TAGS.TAILWIND],
+      "An interactive web application dedicated to the Marvel Universe, built using Angular and seamlessly integrated with the Marvel API. This application offers users a comprehensive platform to explore Marvel's extensive database of characters, comics, series, and events.",
+    link: "https://angular-marvel.netlify.app/dashboard",
+    image: "/projects/marvel.png",
+    tags: [TAGS.ANGULAR, TAGS.TAILWIND],
+    github: "https://github.com/CarlosCarrilloP/Angular-x-Marvel",
+  },
+  {
+    title: "Centro estetica Mayka",
+    description:
+      "An elegant and user-friendly landing page for Centro Estetica Mayka, designed to showcase our premier aesthetic services. Developed with modern web technologies, this landing page provides a comprehensive overview of our beauty and wellness treatments, offering a seamless experience for clients seeking top-quality skincare, haircare, and relaxation services. Discover our diverse range of offerings and book your appointment with ease through our intuitive and stylish online platform.",
+    link: "https://esteticamaykaorihuela.com/",
+    image: "/projects/mayka.png",
+    tags: [ TAGS.HTML, TAGS.BOOSTRAP, TAGS.JAVASCRIPT],
   },
 ]
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link}) => (
+    PROJECTS.map(({ image, title, description, tags, link, github}) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
@@ -74,6 +107,13 @@ const PROJECTS = [
       <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
       <footer class="flex items-end justify-start mt-4 gap-x-4">
         
+        {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Code
+              
+            </LinkButton>
+          )}
           {link && (
             <LinkButton href={link}>
               <Link class="size-4" />
