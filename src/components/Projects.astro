@@ -3,6 +3,8 @@ import Angular from "./icons/Angular.astro"
 import Laravel from "./icons/Laravel.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Html from "./icons/Html.astro"
+import Wordpress from "./icons/Wordpress.astro"
+import Php from "./icons/Php.astro"
 import Boostrap from "./icons/Boostrap.astro"
 import Javascript from "./icons/Javascript.astro"
 import GitHub from "./icons/GitHub.astro"
@@ -45,6 +47,16 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Javascript,
   },
+  WORDPRESS: {
+    name: "Wordpress",
+    class: "bg-[#003159] text-white",
+    icon: Wordpress,
+  },
+  PHP: {
+    name: "PHP",
+    class: "bg-[#003159] text-white",
+    icon: Php,
+  },
 }
 const PROJECTS = [
   {
@@ -60,18 +72,26 @@ const PROJECTS = [
     title: "MARVEL",
     description:
       "An interactive web application dedicated to the Marvel Universe, built using Angular and seamlessly integrated with the Marvel API. This application offers users a comprehensive platform to explore Marvel's extensive database of characters, comics, series, and events.",
-    link: "https://angular-marvel.netlify.app/dashboard",
+    link: "https://angular-marvel.netlify.app",
     image: "/projects/marvel.png",
     tags: [TAGS.ANGULAR, TAGS.TAILWIND],
     github: "https://github.com/CarlosCarrilloP/Angular-x-Marvel",
   },
   {
-    title: "Centro estetica Mayka",
+    title: "Centro estética Mayka",
     description:
       "An elegant and user-friendly landing page for Centro Estetica Mayka, designed to showcase our premier aesthetic services. Developed with modern web technologies, this landing page provides a comprehensive overview of our beauty and wellness treatments, offering a seamless experience for clients seeking top-quality skincare, haircare, and relaxation services. Discover our diverse range of offerings and book your appointment with ease through our intuitive and stylish online platform.",
     link: "https://esteticamaykaorihuela.com/",
     image: "/projects/mayka.png",
     tags: [ TAGS.HTML, TAGS.BOOSTRAP, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "Metamorphosis productions",
+    description:
+      "Metamorphosis Productions is a premier music production company dedicated to transforming artistic visions into memorable sound experiences. This project was an opportunity for me to combine my technical skills with my passion for design and music.",
+    link: "https://metamorphosisproduction.es/",
+    image: "/projects/metamorphosis.png",
+    tags: [ TAGS.WORDPRESS, TAGS.PHP],
   },
 ]
 ---
